@@ -289,7 +289,7 @@ namespace Thycotic.RabbitMq.Helper.PSCommands.Installation.Workflow
                         UseThycoticMirror = UseThycoticMirror
                     })
 
-                    .ReportProgress("Un-installing prior versions", 20)
+                    .ReportProgress("Uninstalling prior versions", 20)
                     .Then(() => new UninstallRabbitMqCommand())
                     .Then(() => new UninstallErlangCommand())
 

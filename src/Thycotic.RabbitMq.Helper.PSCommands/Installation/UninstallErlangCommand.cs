@@ -55,8 +55,8 @@ namespace Thycotic.RabbitMq.Helper.PSCommands.Installation
                 
                 try
                 {
-                    const string erlandProcessKill = " /F /IM erl.exe";
-                    externalProcessRunner.Run("taskkill", workingPath, erlandProcessKill);
+                    const string erlangProcessKill = " /F /IM erl.exe";
+                    externalProcessRunner.Run("taskkill", workingPath, erlangProcessKill);
                 }
                 catch (Exception ex)
                 {
@@ -65,8 +65,8 @@ namespace Thycotic.RabbitMq.Helper.PSCommands.Installation
 
                 try
                 {
-                    const string erlandProcessKill = " /F /IM erlsrv.exe";
-                    externalProcessRunner.Run("taskkill", workingPath, erlandProcessKill);
+                    const string erlangProcessKill = " /F /IM erlsrv.exe";
+                    externalProcessRunner.Run("taskkill", workingPath, erlangProcessKill);
                 }
                 catch (Exception ex)
                 {
@@ -75,8 +75,8 @@ namespace Thycotic.RabbitMq.Helper.PSCommands.Installation
 
                 try
                 {
-                    const string erlandProcessKill = " /F /IM epmd.exe";
-                    externalProcessRunner.Run("taskkill", workingPath, erlandProcessKill);
+                    const string erlangProcessKill = " /F /IM epmd.exe";
+                    externalProcessRunner.Run("taskkill", workingPath, erlangProcessKill);
                 }
                 catch (Exception ex)
                 {

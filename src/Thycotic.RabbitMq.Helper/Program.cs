@@ -70,7 +70,7 @@ namespace Thycotic.RabbitMq.Helper
 
                     if (process.ExitCode != 0 && process.ExitCode != -1073741510)
                     {
-                        throw new ApplicationFailedException($"PowerShell existed with unexpected code {process.ExitCode}");
+                        throw new ApplicationFailedException($"PowerShell exited with unexpected code {process.ExitCode}");
                     }
 
                 });
@@ -90,7 +90,7 @@ namespace Thycotic.RabbitMq.Helper
             catch (Exception ex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error occured:");
+                Console.WriteLine("Error occurred:");
 
                 var ex2 = ex;
 
