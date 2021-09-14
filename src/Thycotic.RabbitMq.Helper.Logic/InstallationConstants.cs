@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Thycotic.RabbitMq.Helper.Logic
 {
@@ -69,17 +71,13 @@ namespace Thycotic.RabbitMq.Helper.Logic
             /// <summary>
             ///     The uninstaller path
             /// </summary>
-            public static readonly string[] UninstallerPaths = new[]
-            {
-                Path.Combine(Environment.Is64BitOperatingSystem ? EnvironmentalVariables.ProgramFiles : EnvironmentalVariables.ProgramFiles32Bit, "erl6.4", "uninstall.exe"),
-                Path.Combine(Environment.Is64BitOperatingSystem ? EnvironmentalVariables.ProgramFiles : EnvironmentalVariables.ProgramFiles32Bit, "erl8.3", "uninstall.exe"),
-                Path.Combine(Environment.Is64BitOperatingSystem ? EnvironmentalVariables.ProgramFiles : EnvironmentalVariables.ProgramFiles32Bit, "erl9.0", "uninstall.exe"),
-                Path.Combine(Environment.Is64BitOperatingSystem ? EnvironmentalVariables.ProgramFiles : EnvironmentalVariables.ProgramFiles32Bit, "erl9.3", "uninstall.exe"),
-                Path.Combine(Environment.Is64BitOperatingSystem ? EnvironmentalVariables.ProgramFiles : EnvironmentalVariables.ProgramFiles32Bit, "erl10.4", "uninstall.exe"),
-                Path.Combine(Environment.Is64BitOperatingSystem ? EnvironmentalVariables.ProgramFiles : EnvironmentalVariables.ProgramFiles32Bit, "erl10.6", "uninstall.exe"),
-                Path.Combine(Environment.Is64BitOperatingSystem ? EnvironmentalVariables.ProgramFiles : EnvironmentalVariables.ProgramFiles32Bit, "erl23.0", "uninstall.exe"),
-                Path.Combine(Environment.Is64BitOperatingSystem ? EnvironmentalVariables.ProgramFiles : EnvironmentalVariables.ProgramFiles32Bit, "erl-24.0", "uninstall.exe"),
-            };
+            public static readonly string[] UninstallerPaths =
+                new DirectoryInfo(EnvironmentalVariables.ProgramFiles)
+                    .GetDirectories("erl*")
+                    .Where(d => Regex.IsMatch(d.Name, @"erl-?\d\d?\.\d"))
+                    .SelectMany(d => d.GetFiles("uninstall.exe"))
+                    .Select(f => f.FullName)
+                    .ToArray();
         }
 
         /// <summary>
