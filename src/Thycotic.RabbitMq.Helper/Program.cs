@@ -50,7 +50,7 @@ namespace Thycotic.RabbitMq.Helper
                         $"Write-Warning 'IMPORTANT: *** The helper re-installs RabbitMq and Erlang during install/re-install/upgrade, even if the same version(s) are installed. ***';" +
                         $"Write-Host;" +
 
-                        $"Write-Warning 'IMPORTANT: *** Always use a local administrator account to install RabbitMq. Otherwise, exit now ***';" +
+                        $"Write-Warning 'IMPORTANT: *** Always use a local administrator account that is NOT a domain account to install RabbitMq. Otherwise, exit now ***';" +
                         $"Write-Host;" +
 
                         $"Write-Host 'Available command-lets in the ''{module.GetName().Name}'' module (use ''get-help CMDLETNAME'' for help and usage):';" +
