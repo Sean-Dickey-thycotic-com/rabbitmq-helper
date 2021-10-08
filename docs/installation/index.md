@@ -27,8 +27,8 @@ The Helper provides multiple commandlets that perform the installation/un-instal
 2.	Choose the most appropriate installation scenario from the four below, but **do not run the associated script yet**:
 
      - [Online Simple Installation without TLS](installnontls.md)
-     - [Online Advanced Installation with TLS](installnontls-offline.md)
-     - [Offline Simple Installation without TLS](installtls.md)
+     - [Online Advanced Installation with TLS](installtls.md)
+     - [Offline Simple Installation without TLS](installnontls-offline.md)
      - [Offline Advanced Installation with TLS](installtls-offline.md)
 
 2. Launch the Helper (Thycotic.RabbitMq.Helper.exe) from the installation folder %PROGRAMFILES%\Thycotic Software Ltd\RabbitMq Helper. 
