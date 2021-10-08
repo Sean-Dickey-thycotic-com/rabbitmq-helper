@@ -50,7 +50,7 @@ namespace Thycotic.RabbitMq.Helper
                         $"Write-Warning 'IMPORTANT: *** The helper re-installs RabbitMq and Erlang during install/re-install/upgrade, even if the same version(s) are installed. ***';" +
                         $"Write-Host;" +
 
-                        $"Write-Warning 'IMPORTANT: *** Always use a local administrator account to install RabbitMq. Otherwise, exit now ***';" +
+                        $"Write-Warning 'IMPORTANT: *** Always use a local administrator account that is NOT a domain account to install RabbitMq. Otherwise, exit now ***';" +
                         $"Write-Host;" +
 
                         $"Write-Host 'Available command-lets in the ''{module.GetName().Name}'' module (use ''get-help CMDLETNAME'' for help and usage):';" +
@@ -70,7 +70,7 @@ namespace Thycotic.RabbitMq.Helper
 
                     if (process.ExitCode != 0 && process.ExitCode != -1073741510)
                     {
-                        throw new ApplicationFailedException($"PowerShell existed with unexpected code {process.ExitCode}");
+                        throw new ApplicationFailedException($"PowerShell exited with unexpected code {process.ExitCode}");
                     }
 
                 });
@@ -90,7 +90,7 @@ namespace Thycotic.RabbitMq.Helper
             catch (Exception ex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error occured:");
+                Console.WriteLine("Error occurred:");
 
                 var ex2 = ex;
 

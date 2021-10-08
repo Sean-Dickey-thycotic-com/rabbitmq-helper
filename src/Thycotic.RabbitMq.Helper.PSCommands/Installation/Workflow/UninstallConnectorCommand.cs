@@ -25,17 +25,17 @@ namespace Thycotic.RabbitMq.Helper.PSCommands.Installation.Workflow
         /// </summary>
         protected override void ProcessRecord()
         {
-            using (var workflow = new CmdletWorkflow(this, "Un-installing"))
+            using (var workflow = new CmdletWorkflow(this, "Uninstalling"))
             {
                 workflow
-                    .ReportProgress("Un-installing RabbitMq", 10)
+                    .ReportProgress("Uninstalling RabbitMq", 10)
                     .Then(() => new UninstallRabbitMqCommand())
 
-                    .ReportProgress("Un-installing Erlang", 30)
+                    .ReportProgress("Uninstalling Erlang", 30)
                     .Then(() => new UninstallErlangCommand())
                     
 
-                    .Then(() => WriteVerbose("Connector has been un-installed."))
+                    .Then(() => WriteVerbose("Connector has been uninstalled."))
                     .Invoke();
             }
         }
