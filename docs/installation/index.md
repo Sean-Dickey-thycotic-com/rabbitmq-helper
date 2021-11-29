@@ -22,7 +22,7 @@ The Helper provides multiple commandlets that perform the installation/un-instal
 
    - [Directly from Thycotic CDN](https://thycocdn.azureedge.net/engineinstallerfiles-master/rabbitMqSiteConnector/grmqh.msi) 
    - [From Thycotic CDN alias](https://updates.thycotic.net/links.ashx?RabbitMqInstaller) 
-   - [Pre-release](https://thycodevstorage.blob.core.windows.net/engineinstallerfiles-qa/rabbitMqSiteConnector/grmqh.msi) 
+   - [Pre-release](https://thycodevstorage.blob.core.windows.net/engineinstallerfiles-qa-blue/rabbitMqSiteConnector/grmqh.msi
 
 2.	Choose the most appropriate installation scenario from the four below, but **do not run the associated script yet**:
 
