@@ -11,10 +11,10 @@ You have to have the [Erlang and RabbitMq installers pre-downloaded](prepare-off
 ```powershell
 $path = "$env:programfiles\Thycotic Software Ltd\RabbitMq Helper\Examples";
 
-$cred = Get-Credential -Message "Enter the initial RabbitMq user username and password";
-#if you don't want to be prompted you can hardcode your credential in the script
-#$password = ConvertTo-SecureString “PlainTextPassword” -AsPlainText -Force
-#$cred = New-Object System.Management.Automation.PSCredential (“CustomUserName”, $password)
+$cred = Get-Credential -Message "Enter the initial RabbitMq user username and password.";
+#If you don't want to be prompted, you can hardcode your credential in the script.
+#$password = ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force
+#$cred = New-Object System.Management.Automation.PSCredential ("CustomUserName", $password)
 
 Install-Connector `
     -Credential $cred `
@@ -23,4 +23,4 @@ Install-Connector `
     -Verbose;
 ```
 
-There are more switches for this commandlet, your run "get-help install-connector" when inside the helper for more information
+There are more switches for this commandlet. Run "get-help install-connector" when inside the helper for more information.
